@@ -1,0 +1,18 @@
+# TD3 with the hyperparameters of Fujimoto et al. (2018), at 256-unit layers.
+algo: td3
+env:
+  id: Ant-v5
+train:
+  total_steps: 1000000
+  learning_starts: 25000
+  eval_every: 10000
+  eval_episodes: 10
+agent:
+  hidden_sizes: [256, 256]
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  batch_size: 256
+  exploration_noise: 0.1
+  target_noise: 0.2
+  noise_clip: 0.5
+  policy_delay: 2

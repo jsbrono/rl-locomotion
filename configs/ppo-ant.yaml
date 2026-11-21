@@ -1,0 +1,16 @@
+# PPO with the MuJoCo hyperparameters of Schulman et al. (2017).
+algo: ppo
+env:
+  id: Ant-v5
+train:
+  total_steps: 1000000
+  eval_every: 10000
+  eval_episodes: 10
+agent:
+  hidden_sizes: [64, 64]
+  lr: 0.0003
+  rollout_steps: 2048
+  epochs: 10
+  minibatch_size: 64
+  clip_range: 0.2
+  gae_lambda: 0.95

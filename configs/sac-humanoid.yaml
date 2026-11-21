@@ -1,0 +1,15 @@
+# SAC with the hyperparameters of Haarnoja et al. (2019), learned temperature.
+algo: sac
+env:
+  id: Humanoid-v5
+train:
+  total_steps: 1000000
+  learning_starts: 10000
+  eval_every: 10000
+  eval_episodes: 10
+agent:
+  hidden_sizes: [256, 256]
+  lr: 0.0003
+  gamma: 0.99
+  tau: 0.005
+  batch_size: 256
