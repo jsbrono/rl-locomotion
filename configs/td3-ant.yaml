@@ -1,4 +1,4 @@
-# TD3 with the hyperparameters of Fujimoto et al. (2018), at 256-unit layers.
+# TD3 with the hyperparameters of the authors' reference implementation (Fujimoto et al. 2018).
 algo: td3
 env:
   id: Ant-v5

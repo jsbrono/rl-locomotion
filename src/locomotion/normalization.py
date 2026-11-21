@@ -49,8 +49,8 @@ class ObservationNormalizer(nn.Module):
 
 
 class RewardScaler(nn.Module):
-    """Divides rewards by the running standard deviation of the discounted return, as in the
-    reference PPO implementation (Engstrom et al. 2020). The mean is not subtracted, so the
+    """Divides rewards by the running standard deviation of the discounted return, as OpenAI
+    Baselines' PPO does (described by Engstrom et al. 2020). The mean is not subtracted, so the
     sign of rewards is kept."""
 
     def __init__(self, gamma: float, eps: float = 1e-8):
