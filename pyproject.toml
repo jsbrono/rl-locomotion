@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "locomotion"
+version = "1.0.0"
+description = "SAC, TD3 and PPO from scratch in PyTorch, for MuJoCo locomotion."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Jakub Bronowicki" }]
+license = "MIT"
+dependencies = [
+    "torch>=2.1",
+    "gymnasium[mujoco]>=1.0",
+    "numpy",
+    "pyyaml",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+video = ["moviepy"]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "NPY"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
